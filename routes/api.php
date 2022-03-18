@@ -19,4 +19,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+
+
+Route::get('/ashbee', function () {
+    return 'from api';
+});
 Route::post('/user/register',[UserController::class,'store']);

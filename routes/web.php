@@ -18,7 +18,7 @@ Route::get('/', function () {
 });
 
 Route::get('/ashbee',function(){
-    return uniqid();
+    return 'from web';
 });
 Auth::routes();
 
