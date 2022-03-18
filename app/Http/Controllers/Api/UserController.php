@@ -42,7 +42,7 @@ class UserController extends Controller
             'phone_number' => $request->phone_number,
             'address' => $request->address,
             'email' => $request->email,
-            'password ' => Hash::make($request->password),
+            'password' => Hash::make($request->password),
         ]);
         return response()->json([
             'message'=>'test',
