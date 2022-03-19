@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
@@ -44,10 +45,35 @@ class UserController extends Controller
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);
+        $token = $user->createToken('auth_token')->plainTextToken;
         return response()->json([
-            'message'=>'test',
+            'message'=>'Successful Registration',
             'data'=>[
-                'user'=>$user
+                'access_token'=>$token,
+                'code'=>200,
+                'token_type'=>'Bearer'
+            ]
+        ],200);
+    }
+
+    public function login(Request $request)
+    {
+        if(!Auth::attempt($request->only('email','password'))){
+            return response()->json([
+                'message'=>'Invalid Credentials',
+                'code'=>401
+            ],401);
+        }
+
+        $user = User::where('email',$request->email)->first();
+        $token = $user->createToken('auth_token')->plainTextToken;
+
+        return response()->json([
+            'message'=>'Successful Login',
+            'data'=>[
+                'access_token'=>$token,
+                'code'=>200,
+                'token_type'=>'Bearer'
             ]
         ],200);
     }

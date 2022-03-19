@@ -25,3 +25,4 @@ Route::get('/ashbee', function () {
     return 'from api';
 });
 Route::post('/user/register',[UserController::class,'store']);
+Route::post('/user/login',[UserController::class,'login']);
