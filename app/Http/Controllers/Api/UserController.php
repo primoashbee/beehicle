@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 use Illuminate\Validation\Rule;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
@@ -39,7 +40,7 @@ class UserController extends Controller
         $user =  User::create([
             'name' => $request->name,
             'gender' => $request->gender,
-            'birthday' => $request->birthday,
+            'birthday' => Carbon::parse($request->birthday),
             'phone_number' => $request->phone_number,
             'address' => $request->address,
             'email' => $request->email,
