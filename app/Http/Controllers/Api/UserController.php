@@ -53,7 +53,8 @@ class UserController extends Controller
                 'access_token'=>$token,
                 'code'=>200,
                 'token_type'=>'Bearer'
-            ]
+            ],
+            'code'=>200
         ],200);
     }
 

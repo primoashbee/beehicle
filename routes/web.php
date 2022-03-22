@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Vehicle;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,5 +22,4 @@ Route::get('/ashbee',function(){
     return 'from web';
 });
 Auth::routes();
-
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

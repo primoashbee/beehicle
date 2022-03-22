@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\API\ServiceController;
 use App\Http\Controllers\Api\UserController;
+use App\Http\Controllers\API\VehicleController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -18,11 +20,22 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+Route::post('/user/register', [UserController::class, 'store']);
+Route::post('/user/login', [UserController::class, 'login']);
 
+Route::middleware('auth:sanctum')->group(function(){
 
-
-Route::get('/ashbee', function () {
-    return 'from api';
+    Route::prefix('/vehicles')->group(function(){
+        Route::get('/', [VehicleController::class, 'index']);
+        Route::post('/create', [VehicleController::class, 'store']);
+        Route::put('/{id}/update', [VehicleController::class, 'update']);
+        Route::delete('/{id}/delete', [VehicleController::class, 'delete']);
+    });
+    Route::prefix('/services')->group(function(){
+        Route::get('/{vehicle_id}/list', [ServiceController::class, 'vehicleServices']);
+        Route::post('/create', [ServiceController::class, 'store']);
+        Route::put('/{id}/update', [ServiceController::class, 'update']);
+        Route::delete('/{id}/delete', [ServiceController::class, 'delete']);
+    });
+    
 });
-Route::post('/user/register',[UserController::class,'store']);
-Route::post('/user/login',[UserController::class,'login']);
