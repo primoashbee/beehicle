@@ -55,7 +55,9 @@ class VehicleController extends Controller
 
         return response()->json([
             'message' => 'Successful Vehicle Registration',
-            'data' => [],
+            'data' => [
+                'vehicle'=> $vehicle
+            ],
             'code' => 200
         ], 200);
     }
