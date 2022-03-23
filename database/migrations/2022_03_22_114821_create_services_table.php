@@ -21,8 +21,6 @@ class CreateServicesTable extends Migration
             $table->decimal('amount', 8, 2, true);
             $table->date('next_service_date');
             $table->string('service_provider');
-            $table->text('notes')->nullable();
-            $table->softDeletes();
             $table->timestamps();
         });
     }
