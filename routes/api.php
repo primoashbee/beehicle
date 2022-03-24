@@ -1,8 +1,8 @@
 <?php
 
-use App\Http\Controllers\API\ServiceController;
+use App\Http\Controllers\Api\ServiceController;
 use App\Http\Controllers\Api\UserController;
-use App\Http\Controllers\API\VehicleController;
+use App\Http\Controllers\Api\VehicleController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
