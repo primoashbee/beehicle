@@ -4,9 +4,6 @@ services:
   #Laravel App
   app:
     build:
-      args:
-        user: root
-        uid: 1000
       context: ./
       dockerfile: ./docker/php/Dockerfile
     image: laravel-app
