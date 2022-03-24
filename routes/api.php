@@ -33,6 +33,9 @@ Route::post('/user/login', [UserController::class, 'login']);
 Route::get('/user/login', function(){
     return ['messsage'=> 'get'];
 });
+Route::post('/user/login', function(){
+    return ['messsage'=> 'post'];
+});
 
 Route::middleware('auth:sanctum')->group(function(){
 
