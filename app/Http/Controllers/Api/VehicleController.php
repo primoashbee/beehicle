@@ -105,7 +105,9 @@ class VehicleController extends Controller
 
         return response()->json([
             'message' => 'Vehicle successfully updated',
-            'data' => [],
+            'data' => [
+                'vehicle' => $vehicle->fresh()
+            ],
             'code' => 200
         ], 200);
     }
