@@ -22,8 +22,7 @@ RUN apt-get update && apt-get install -y \
     libx11-dev \
     libjpeg62 \
     libxtst6 \
-    unzip \
-    ffmpeg
+    unzip
 
 # Clear cache
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
