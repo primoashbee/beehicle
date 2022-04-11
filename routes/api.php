@@ -1,8 +1,10 @@
 <?php
 
+use App\Http\Controllers\Api\ProviderController;
 use App\Http\Controllers\Api\ServiceController;
 use App\Http\Controllers\Api\UserController;
 use App\Http\Controllers\Api\VehicleController;
+use App\Http\Controllers\Api\VehicleServiceController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -38,12 +40,38 @@ Route::middleware('auth:sanctum')->group(function(){
         Route::post('/create', [VehicleController::class, 'store']);
         Route::put('/{id}/update', [VehicleController::class, 'update']);
         Route::delete('/{id}/delete', [VehicleController::class, 'delete']);
+        
+
+
+        // Route::get('/service',[VehicleServiceController::class, 'index']);
+
+        Route::prefix('/{vehicle_id}/services')->group(function(){
+            Route::get('/',[VehicleServiceController::class, 'index']);
+
+            Route::post('/create',[VehicleServiceController::class, 'store']);
+            Route::get('/view/{vehicle_service_id}',[VehicleServiceController::class, 'view']);
+            Route::put('/update/{vehicle_service_id}',[VehicleServiceController::class, 'update']);
+            Route::delete('/view/{vehicle_service_id}',[VehicleServiceController::class, 'destroy']);
+        });
     });
     Route::prefix('/services')->group(function(){
-        Route::get('/{vehicle_id}/list', [ServiceController::class, 'vehicleServices']);
-        Route::post('/create', [ServiceController::class, 'store']);
-        Route::put('/{id}/update', [ServiceController::class, 'update']);
-        Route::delete('/{id}/delete', [ServiceController::class, 'delete']);
+        // Route::get('/{vehicle_id}/list', [ServiceController::class, 'vehicleServices']);
+        // Route::post('/create', [ServiceController::class, 'store']);
+        // Route::put('/{id}/update', [ServiceController::class, 'update']);
+        // Route::delete('/{id}/delete', [ServiceController::class, 'delete']);
+
+        Route::get('/', [ServiceController::class, 'index']);
     });
+
+    Route::prefix('/providers')->group(function(){
+        // Route::get('/{vehicle_id}/list', [ServiceController::class, 'vehicleServices']);
+        // Route::post('/create', [ServiceController::class, 'store']);
+        // Route::put('/{id}/update', [ServiceController::class, 'update']);
+        // Route::delete('/{id}/delete', [ServiceController::class, 'delete']);
+
+        Route::get('/', [ProviderController::class, 'index']);
+    });
+    
+
     
 });

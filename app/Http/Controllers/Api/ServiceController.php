@@ -10,6 +10,16 @@ use Illuminate\Support\Facades\Validator;
 
 class ServiceController extends Controller
 {
+    public function index()
+    {
+        return response()->json([
+            'message' => 'Success',
+            'code' => 200,
+            'data' => [
+                'services'=> Service::select('id','name')->orderBy('name','asc')->get()
+            ]
+        ], 200);       
+    }
     public function vehicleServices($vehicle_id)
     {
         $vehicle = Vehicle::find($vehicle_id);
