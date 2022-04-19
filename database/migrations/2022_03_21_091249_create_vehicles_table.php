@@ -22,7 +22,7 @@ class CreateVehiclesTable extends Migration
             $table->string('date_purchased');
             $table->string('chasis');
             $table->string('coding');
-            $table->longText('description');
+            $table->longText('description')->nullable();
             $table->timestamps();
         });
     }

@@ -47,7 +47,8 @@ class VehicleServiceController extends Controller
             $request->all(),
             [
                 'vehicle_id'=>'required|exists:vehicles,id',
-                'service_id'=>'required|exists:services,id',
+                'service_ids'=>'required',
+                'service_ids.*'=>'required|exists:services,id',
                 'provider_id'=>'required|exists:providers,id',
                 'name'=>'required',
                 'date'=>'required|date',
@@ -63,19 +64,22 @@ class VehicleServiceController extends Controller
             ], 422);
         }
         $vehicle = Vehicle::find($request->vehicle_id);
-        $service = $vehicle->services()->create([
-            'service_id'=>$request->service_id,
-            'provider_id'=>$request->provider_id,
-            'name'=>$request->name,
-            'date'=>$request->date,
-            'cost'=>$request->cost,
-            'notes'=>$request->notes,
-        ]);
+        $services = [];
+        foreach($request->service_ids as $service_id){
+            $services[] = $vehicle->services()->create([
+                'service_id'=>$service_id,
+                'provider_id'=>$request->provider_id,
+                'name'=>$request->name,
+                'date'=>$request->date,
+                'cost'=>$request->cost,
+                'notes'=>$request->notes,
+            ]);
+        }
 
         return response()->json([
             'message' => 'Successful Service Created',
             'data' => [
-                'service'=> $service
+                'service'=> $services
             ],
             'code' => 200
         ], 200);
