@@ -20,7 +20,13 @@
 var map;
 function initMap() {
 
-  console.log(axios.get('https://catfact.ninja/fact'))
+  axios.post('https://beehicle.xyz/api/user/login', {
+    email: 'ashbee.morgado@icloud.com',
+    password: 'password'
+  })
+    .then(res=>{
+      console.log(res.data);
+    })
   // The map, centered on Central Park
   const center = {lat: 40.774102, lng: -73.971734};
   const options = {zoom: 15, scaleControl: true, center: center};
