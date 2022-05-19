@@ -8,6 +8,8 @@
         width: 600px;
        }
     </style>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js" integrity="sha512-odNmoc1XJy5x1TMVMdC7EMs3IVdItLPlCeL5vSUPN2llYKMJ2eByTTAIiiuqLg+GdNr9hF6z81p27DArRFKT7A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
   </head>
   <body>
     <!--The div elements for the map and message -->
@@ -66,7 +68,6 @@ function initMap() {
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key={{config('services.google.api_key')}}&callback=initMap">
     </script>
-    <script async defer src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js" integrity="sha512-odNmoc1XJy5x1TMVMdC7EMs3IVdItLPlCeL5vSUPN2llYKMJ2eByTTAIiiuqLg+GdNr9hF6z81p27DArRFKT7A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     
   </body>
