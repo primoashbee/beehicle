@@ -29,11 +29,12 @@ class HomeController extends Controller
 
     public function dashboard()
     {
-        $id = auth()->user()->id;
-        $user = User::where('id', $id)->with('vehicles')->get(); 
-        return response()->json($user);
-        exit;       
-        return view('dashboard');
+        // $id = auth()->user()->id;
+        // $user = User::where('id', $id)->with('vehicles')->get(); 
+        // return response()->json($user);
+        // exit;       
+        return view('admin.dashboard');
+        return auth()->user()->vehicles;
     }
 
 

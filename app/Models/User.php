@@ -13,7 +13,8 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable, SoftDeletes;
-
+    const APP_USER = 2;
+    const ADMIN = 1;
     /**
      * The attributes that are mass assignable.
      *
@@ -47,5 +48,19 @@ class User extends Authenticatable
     public function vehicles()
     {
         return $this->hasMany(Vehicle::class, 'user_id');
+    }
+    public function getUserTypeAttribute()
+    {
+        if($this->type == self::ADMIN){
+            return 'Admin';
+        }
+        if($this->type == self::APP_USER){
+            return 'User';
+        }
+    }
+
+    public function getIsAdminAttribute()
+    {
+        return $this->type == self::ADMIN ? true : false;
     }
 }

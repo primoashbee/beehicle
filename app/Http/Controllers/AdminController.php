@@ -10,10 +10,12 @@ class AdminController extends Controller
 {
     //
     public function index(){
-        $data['user'] = User::all();
-        $data['vehicle'] = Vehicle::all();
-        return response()->json($data);
-        exit;
-        return view('admin/dashboard');
+        // dd('here');
+        // $data['user'] = User::all();
+        // $data['vehicle'] = Vehicle::all();
+        // return response()->json($data);
+        // exit;
+        // return view('admin/dashboard');
+        return User::with('vehicles.services')->get();
     }
 }

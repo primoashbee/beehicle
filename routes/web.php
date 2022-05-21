@@ -27,3 +27,7 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'dashboard'])->name('dashboard');
 Route::get('/admin', [App\Http\Controllers\AdminController::class, 'index'])->name('index');
+
+Route::get('/logout', function(){
+    auth()->logout();
+});
