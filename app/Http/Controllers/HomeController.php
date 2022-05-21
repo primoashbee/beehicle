@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -25,4 +26,15 @@ class HomeController extends Controller
     {
         return view('home');
     }
+
+    public function dashboard()
+    {
+        $id = auth()->user()->id;
+        $user = User::where('id', $id)->with('vehicles')->get(); 
+        return response()->json($user);
+        exit;       
+        return view('dashboard');
+    }
+
+
 }

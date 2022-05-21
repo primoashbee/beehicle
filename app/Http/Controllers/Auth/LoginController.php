@@ -8,6 +8,7 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 class LoginController extends Controller
 {
+  
     /*
     |--------------------------------------------------------------------------
     | Login Controller
@@ -21,12 +22,24 @@ class LoginController extends Controller
 
     use AuthenticatesUsers;
 
+    protected $redirectTo = '/home';
+    protected function redirectTo()
+    {
+        if (auth()->user()->id == '1') {
+            return '/admin';
+        }
+        return '/dashboard';
+    }
+
+
     /**
      * Where to redirect users after login.
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    
+    // protected $redirectTo = RouteServiceProvider::HOME;
+    
 
     /**
      * Create a new controller instance.
