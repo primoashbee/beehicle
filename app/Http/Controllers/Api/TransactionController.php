@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use App\Models\Transaction;
 
 class TransactionController extends Controller
 {
@@ -21,7 +22,7 @@ class TransactionController extends Controller
                 'to.address'=>'required',
                 'to.lat'=>'required',
                 'to.lng'=>'required',
-                
+
                 'odometer'=>'required'
             ]
         );
@@ -35,7 +36,16 @@ class TransactionController extends Controller
             ], 422);  
         }
 
-        Transaction
+        $transaction = Transaction::create([
+            'vehicle_id'=>$request->vehicle_id,
+            'from_address'=>$request->from['address'],
+            'from_lat'=>$request->from['lat'],
+            'from_lng'=>$request->from['lng'],
+
+            'to_address'=>$request->from['address'],
+            'to_lat'=>$request->to['lat'],
+            'to_lng'=>$request->to['lng'],
+        ]);
 
         return response()->json([
             'message' => 'Success',
