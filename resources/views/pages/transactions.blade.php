@@ -35,7 +35,7 @@
                 <td>
                     {{number_format($transaction->odometer)}}
                 </td>
-                <td><span class="badge bg-label-primary me-1">{{ $transaction->created_at->diffForHumans()}}</span></td> --}}
+                <td><span class="badge bg-label-primary me-1">{{ $transaction->created_at->diffForHumans()}}</span></td> 
 
               {{--<td>
                 {{$service->name}}
