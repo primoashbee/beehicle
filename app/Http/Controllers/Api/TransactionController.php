@@ -14,8 +14,10 @@ class TransactionController extends Controller
             $request->all(),
             [
                 'vehicle_id'=>'required|exists:vehicles,id',
-                'lat'=>'required',
-                'lng'=>'required',
+                'from.lat'=>'required',
+                'from.lng'=>'required',
+                'to.lat'=>'required',
+                'to.lng'=>'required',
                 'odometer'=>'required'
             ]
         );
