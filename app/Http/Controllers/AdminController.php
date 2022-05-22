@@ -8,6 +8,7 @@ use App\Models\ServiceSummary;
 use App\Models\Service;
 use App\Models\Transaction;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller
 {
@@ -48,5 +49,50 @@ class AdminController extends Controller
     {
         $transactions = Transaction::with('vehicle','user')->paginate(10);
         return view('pages.transactions',compact('transactions'));
+    }
+    public function profile()
+    {
+        $user = auth()->user();
+        return view('pages.profile', compact('user'));
+    }
+    public function updateProfile(Request $request)
+    {
+        $user = auth()->user();
+        $id = $user->id;
+        $request->validate(
+            [
+                'name'=>'required',
+                'email'=>'required|unique:users,email,'.$id,
+                'phone_number'=>'required|unique:users,phone_number,'.$id,
+                'password'=>'nullable|min:8|confirmed',
+            ]
+        );
+        if(!is_null($request->password)){
+            $user->update(
+                [
+                    'name'=>$request->name,
+                    'email'=>$request->email,
+                    'phone_number'=>$request->phone_number,
+                    'password'=> Hash::make($request->password)
+                ]
+             );
+             session()->flash('status', [
+                 'code'=>200,
+                 'message'=>'Profile Successfully Updated'
+            ]);
+        }
+        $user->update(
+            [
+                'name'=>$request->name,
+                'email'=>$request->email,
+                'phone_number'=>$request->phone_number,
+            ]
+         );
+         session()->flash('status', [
+             'code'=>200,
+             'message'=>'Profile Successfully Updated'
+        ]);
+
+        return redirect()->back();
     }
 }
