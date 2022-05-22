@@ -19,6 +19,7 @@ class CreateServiceSummariesTable extends Migration
             $table->string('name');
             $table->string('cost');
             $table->date('date');
+            $table->unsignedInteger('vehicle_id');
             $table->unsignedInteger('provider_id');
             $table->longText('notes')->nullable();
             $table->timestamps();

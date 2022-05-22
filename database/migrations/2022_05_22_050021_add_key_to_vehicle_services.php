@@ -14,7 +14,7 @@ class AddKeyToVehicleServices extends Migration
     public function up()
     {
         Schema::table('vehicle_services', function (Blueprint $table) {
-            $table->string('key')->unique();
+            $table->string('key');
         });
     }
 
