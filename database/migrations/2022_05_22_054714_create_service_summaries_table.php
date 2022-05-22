@@ -17,6 +17,7 @@ class CreateServiceSummariesTable extends Migration
             $table->id();
             $table->string('key')->unique();
             $table->string('name');
+            $table->string('cost');
             $table->date('date');
             $table->unsignedInteger('provider_id');
             $table->longText('notes')->nullable();

@@ -74,6 +74,7 @@ class VehicleServiceController extends Controller
             'date'=>$request->date,
             'cost'=>$request->cost,
             'notes'=>$request->notes,
+            'provider_id'=>$request->provider_id,
             'key'=>$key
         ]);
         foreach($request->service_ids as $service_id){
