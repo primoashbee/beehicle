@@ -6,7 +6,7 @@ use App\Models\Vehicle;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\VehicleService;
-use App\Models\VehicleSummary;
+use App\Models\ServiceSummary;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
 
@@ -69,7 +69,7 @@ class VehicleServiceController extends Controller
         $vehicle = Vehicle::find($request->vehicle_id);
         $services = [];
         $key = Str::uuid();
-        $summary = VehicleSummary::create([
+        $summary = ServiceSummary::create([
             'name'=>$request->name,
             'date'=>$request->date,
             'cost'=>$request->cost,
