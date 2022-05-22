@@ -69,7 +69,7 @@
                 <label class="col-sm-2 col-form-label" for="basic-default-phone">Password</label>
                 <div class="col-sm-10">
                   <input
-                    type="text"
+                    type="password"
                     class="form-control @error('password') is-invalid @enderror"
                     name="password"
                     value="{{old('password')}}"
@@ -85,7 +85,7 @@
                 <label class="col-sm-2 col-form-label" for="basic-default-phone">Password Confirmation</label>
                 <div class="col-sm-10">
                   <input
-                    type="text"
+                    type="password"
                     class="form-control @error('password_confirmation') is-invalid @enderror"
                     name="password_confirmation"
                     value="{{old('password_confirmation')}}"
