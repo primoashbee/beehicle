@@ -52,10 +52,10 @@ class User extends Authenticatable
     public function getUserTypeAttribute()
     {
         if($this->type == self::ADMIN){
-            return 'Admin';
+            return 'Adminstrator';
         }
         if($this->type == self::APP_USER){
-            return 'User';
+            return 'App User';
         }
     }
 
@@ -63,4 +63,5 @@ class User extends Authenticatable
     {
         return $this->type == self::ADMIN ? true : false;
     }
+
 }

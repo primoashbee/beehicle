@@ -5,6 +5,7 @@ use App\Http\Controllers\Api\ServiceController;
 use App\Http\Controllers\Api\UserController;
 use App\Http\Controllers\Api\VehicleController;
 use App\Http\Controllers\Api\VehicleServiceController;
+use App\Http\Controllers\Api\TransactionController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -61,6 +62,10 @@ Route::middleware('auth:sanctum')->group(function(){
         // Route::delete('/{id}/delete', [ServiceController::class, 'delete']);
 
         Route::get('/', [ServiceController::class, 'index']);
+    });
+
+    Route::prefix('/transactions')->group(function(){
+       Route::post('/', [TransactionController::class,'store']); 
     });
 
     Route::prefix('/providers')->group(function(){

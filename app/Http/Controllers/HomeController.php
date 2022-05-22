@@ -33,7 +33,7 @@ class HomeController extends Controller
         // $user = User::where('id', $id)->with('vehicles')->get(); 
         // return response()->json($user);
         // exit;       
-        return view('admin.dashboard');
+        return view('pages.dashboard');
         return auth()->user()->vehicles;
     }
 

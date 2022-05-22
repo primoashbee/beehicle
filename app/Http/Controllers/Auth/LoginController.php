@@ -22,13 +22,10 @@ class LoginController extends Controller
 
     use AuthenticatesUsers;
 
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/dashboard';
     protected function redirectTo()
     {
-        if (auth()->user()->is_admin) {
-            return '/admin';
-        }
-        return '/dashboard';
+       return '/dashboard';
     }
 
 

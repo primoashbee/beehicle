@@ -232,5 +232,5 @@
     </div>
     <!--/ Basic Bootstrap Table -->
 
-  </div>
+</div>
 @endsection
