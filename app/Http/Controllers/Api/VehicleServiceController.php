@@ -79,11 +79,12 @@ class VehicleServiceController extends Controller
                 'key'=>$key
             ]);
         }
-
+        $service = VehicleService::distinct('key')->where('key', $key)->first();
+        $service['services'] = $services;
         return response()->json([
             'message' => 'Successful Service Created',
             'data' => [
-                'service'=> $services
+                'service'=> $service
             ],
             'code' => 200
         ], 200);
