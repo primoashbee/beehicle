@@ -17,13 +17,16 @@ class CreateTransactionsTable extends Migration
             $table->id();
             $table->unsignedInteger('vehicle_id');
 
+            $table->string('name');
             $table->string('from_address');
             $table->string('from_lat');
             $table->string('from_lng');
-            
+
             $table->string('to_address');
             $table->string('to_lat');
             $table->string('to_lng');
+
+
             $table->timestamps();
         });
     }
