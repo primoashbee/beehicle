@@ -20,4 +20,8 @@ class Vehicle extends Model
     {
         return $this->hasMany(VehicleService::class);
     }
+    public function transactions()
+    {
+        return $this->hasMany(Transaction::class);
+    }
 }

@@ -79,4 +79,15 @@ class UserController extends Controller
             ]
         ],200);
     }
+
+    public function setup()
+    {
+        $user_id = auth('sanctum')->user()->id;
+        $data = User::with(['vehicles.transactions','vehicles.services'])->find($user_id);
+        
+        return response()->json([
+            'message'=>'Successful',
+            'data'=> $data
+        ],200);
+    }
 }

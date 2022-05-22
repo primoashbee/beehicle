@@ -76,6 +76,8 @@ Route::middleware('auth:sanctum')->group(function(){
 
         Route::get('/', [ProviderController::class, 'index']);
     });
+
+    Route::get('/setup', [UserController::class,'setup']);
     
 
     
