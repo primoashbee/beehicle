@@ -68,6 +68,13 @@ class VehicleServiceController extends Controller
         $vehicle = Vehicle::find($request->vehicle_id);
         $services = [];
         $key = Str::uuid();
+        $summary = VehicleSummary::create([
+            'name'=>$request->name,
+            'date'=>$request->date,
+            'cost'=>$request->cost,
+            'notes'=>$request->notes,
+            'key'=>$key
+        ]);
         foreach($request->service_ids as $service_id){
             $services[] = $vehicle->services()->create([
                 'service_id'=>$service_id,
