@@ -13,6 +13,6 @@ class ServiceSummary extends Model
 
     public function services()
     {
-        $this->hasMany(VehicleService::class,'key','key');
+        return $this->hasMany(VehicleService::class,'key','key');
     }
 }
