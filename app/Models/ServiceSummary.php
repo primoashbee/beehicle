@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\VehicleServices;
+use App\Models\VehicleService;
 class ServiceSummary extends Model
 {
     use HasFactory;
@@ -13,6 +13,6 @@ class ServiceSummary extends Model
 
     public function services()
     {
-        $this->hasMany(VehicleServices::class,'key','key');
+        $this->hasMany(VehicleService::class,'key','key');
     }
 }
