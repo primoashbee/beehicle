@@ -80,6 +80,7 @@ class AdminController extends Controller
                  'code'=>200,
                  'message'=>'Profile Successfully Updated'
             ]);
+            return redirect()->back();
         }
         $user->update(
             [
