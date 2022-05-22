@@ -11,6 +11,11 @@ class Vehicle extends Model
     use HasFactory, SoftDeletes;
     protected $guarded = [];
 
+    protected $dates = [
+        'created_at',
+        'updated_at',
+        'date_purchased'
+    ];
     public function user()
     {
         return $this->belongsTo(User::class);

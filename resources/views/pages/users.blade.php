@@ -24,9 +24,9 @@
               <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>{{$user->name}}</strong></td>
               <td>{{$user->email}}</td>
               <td>
-                {{rand(0,5)}}
+                {{$user->vehicles()->count()}}
               </td>
-              <td><span class="badge bg-label-primary me-1">Active</span></td>
+              <td><span class="badge bg-label-primary me-1">{{ $user->created_at->diffForHumans()}}</span></td>
               <td>
                 <div class="dropdown">
                   <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
