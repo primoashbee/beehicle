@@ -47,7 +47,7 @@ class TransactionController extends Controller
             'from_lat'=>$request->from['lat'],
             'from_lng'=>$request->from['lng'],
 
-            'to_address'=>$request->from['address'],
+            'to_address'=>$request->to['address'],
             'to_lat'=>$request->to['lat'],
             'to_lng'=>$request->to['lng'],
         ]);
