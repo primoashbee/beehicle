@@ -50,6 +50,7 @@ class TransactionController extends Controller
             'to_address'=>$request->to['address'],
             'to_lat'=>$request->to['lat'],
             'to_lng'=>$request->to['lng'],
+            'odometer'=>$request->odometer
         ]);
 
         return response()->json([
