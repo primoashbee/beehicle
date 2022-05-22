@@ -6,6 +6,7 @@ use App\Models\Vehicle;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\VehicleService;
+use App\Models\ServiceSummary;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
 

@@ -19,7 +19,7 @@ class CreateServiceSummariesTable extends Migration
             $table->string('name');
             $table->date('date');
             $table->unsignedInteger('provider_id');
-            $table-longText('notes')->nullable();
+            $table->longText('notes')->nullable();
             $table->timestamps();
         });
     }
