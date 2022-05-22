@@ -14,10 +14,14 @@ class TransactionController extends Controller
             $request->all(),
             [
                 'vehicle_id'=>'required|exists:vehicles,id',
+                'from.address'=>'required',
                 'from.lat'=>'required',
                 'from.lng'=>'required',
+
+                'to.address'=>'required',
                 'to.lat'=>'required',
                 'to.lng'=>'required',
+                
                 'odometer'=>'required'
             ]
         );
@@ -30,6 +34,8 @@ class TransactionController extends Controller
                 'data' => $validator->errors()
             ], 422);  
         }
+
+        Transaction
 
         return response()->json([
             'message' => 'Success',
