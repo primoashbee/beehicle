@@ -56,7 +56,7 @@
             </g>
           </svg>
         </span>
-        <span class="app-brand-text demo menu-text fw-bolder ms-2">Sneat</span>
+        <span class="app-brand-text demo menu-text fw-bolder ms-2">{{env('APP_NAME')}}</span>
       </a>
 
       <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
@@ -104,7 +104,7 @@
         </a>
       </li>
       <!-- Misc -->
-      <li class="menu-header small text-uppercase"><span class="menu-header-text">Misc</span></li>
+      {{-- <li class="menu-header small text-uppercase"><span class="menu-header-text">Misc</span></li>
       <li class="menu-item">
         <a
           href="https://github.com/themeselection/sneat-html-admin-template-free/issues"
@@ -124,6 +124,6 @@
           <i class="menu-icon tf-icons bx bx-file"></i>
           <div data-i18n="Documentation">Documentation</div>
         </a>
-      </li>
+      </li> --}}
     </ul>
   </aside>

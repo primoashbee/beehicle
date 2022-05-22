@@ -2,11 +2,11 @@
 
 @section('content')
 <div class="container-xxl flex-grow-1 container-p-y">
-    <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Tables /</span> Basic Tables</h4>
+    <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Information /</span> Services</h4>
 
     <!-- Basic Bootstrap Table -->
     <div class="card">
-      <h5 class="card-header">Table Basic</h5>
+      <h5 class="card-header">List of Services</h5>
       <div class="table-responsive text-nowrap">
         <table class="table">
           <thead>

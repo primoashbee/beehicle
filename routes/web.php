@@ -34,4 +34,5 @@ Route::get('/transactions', [App\Http\Controllers\AdminController::class, 'trans
 
 Route::get('/logout', function(){
     auth()->logout();
+    return redirect('/');
 });

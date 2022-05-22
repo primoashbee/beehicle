@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\Vehicle;
 use App\Models\ServiceSummary;
+use App\Models\Service;
 use App\Models\Transaction;
 use Illuminate\Http\Request;
 
@@ -17,7 +18,11 @@ class AdminController extends Controller
         // $data['vehicle'] = Vehicle::all();
         // return response()->json($data);
         // exit;
-        return view('pages.dashboard');
+        $total_users = User::count();
+        $total_vehicles = Vehicle::count();
+        $total_transactions = Transaction::count();
+        $total_services = Service::count();
+        return view('pages.dashboard',compact('total_users','total_vehicles','total_transactions','total_services'));
         // return User::with('vehicles.services')->get();
     }
 

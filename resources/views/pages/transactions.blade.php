@@ -2,11 +2,11 @@
 
 @section('content')
 <div class="container-xxl flex-grow-1 container-p-y">
-    <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Tables /</span> Basic Tables</h4>
+    <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Information /</span> Transactions</h4>
 
     <!-- Basic Bootstrap Table -->
     <div class="card">
-      <h5 class="card-header">Table Basic</h5>
+      <h5 class="card-header">List of Transactions</h5>
       <div class="table-responsive text-nowrap">
         <table class="table">
           <thead>
@@ -33,8 +33,10 @@
                     {{$transaction->to_address}}
                 </td>
                 <td>
-                    {{$transaction->odometer}}
+                    {{number_format($transaction->odometer)}}
                 </td>
+                <td><span class="badge bg-label-primary me-1">{{ $transaction->created_at->diffForHumans()}}</span></td> --}}
+
               {{--<td>
                 {{$service->name}}
               </td>
