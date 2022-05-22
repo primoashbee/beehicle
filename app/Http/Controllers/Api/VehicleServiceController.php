@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\VehicleService;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Str;
 
 class VehicleServiceController extends Controller
 {
@@ -53,6 +54,7 @@ class VehicleServiceController extends Controller
                 'name'=>'required',
                 'date'=>'required|date',
                 'cost'=>'required|gte:0',
+                
             ]
         );
 
@@ -65,6 +67,7 @@ class VehicleServiceController extends Controller
         }
         $vehicle = Vehicle::find($request->vehicle_id);
         $services = [];
+        $key = Str::uuid();
         foreach($request->service_ids as $service_id){
             $services[] = $vehicle->services()->create([
                 'service_id'=>$service_id,
@@ -73,6 +76,7 @@ class VehicleServiceController extends Controller
                 'date'=>$request->date,
                 'cost'=>$request->cost,
                 'notes'=>$request->notes,
+                'key'=>$key
             ]);
         }
 

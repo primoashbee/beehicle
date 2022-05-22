@@ -15,10 +15,10 @@ class VehicleService extends Model
 
     public static function boot()
     {
-        parent::boot();
-        static::creating(function($model){
-            $model->key = Str::uuid();
-        });
+        // parent::boot();
+        // static::creating(function($model){
+        //     $model->key = Str::uuid();
+        // });
     }
     public function provider()
     {
