@@ -24,4 +24,18 @@ class Vehicle extends Model
     {
         return $this->hasMany(Transaction::class);
     }
+
+    public function getVehicleServicesAttribute()
+    {
+        // return \DB::table('vehicle_services')
+        //         ->select('name','date','cost','created_at')
+        //         ->distinct()
+        //         ->get();
+        
+        return VehicleService::select('name','date','cost','created_at','key')
+            ->distinct()
+            ->get()
+            ->each->append('services');
+        return $services;
+    }
 }

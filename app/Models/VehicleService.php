@@ -25,4 +25,11 @@ class VehicleService extends Model
     {
         return $this->belongsTo(Vehicle::class);
     }
+
+    public function getServicesAttribute()
+    {
+        
+        return VehicleService::where('key', $this->key)->get();
+        // return $this->hasMany(VehicleService::class,'key','key');
+    }
 }
