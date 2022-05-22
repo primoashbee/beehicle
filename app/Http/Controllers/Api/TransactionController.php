@@ -15,6 +15,8 @@ class TransactionController extends Controller
             $request->all(),
             [
                 'vehicle_id'=>'required|exists:vehicles,id',
+                'name'=>'required',
+
                 'from.address'=>'required',
                 'from.lat'=>'required',
                 'from.lng'=>'required',
@@ -38,6 +40,9 @@ class TransactionController extends Controller
 
         $transaction = Transaction::create([
             'vehicle_id'=>$request->vehicle_id,
+
+            'name'=>$request->name,
+
             'from_address'=>$request->from['address'],
             'from_lat'=>$request->from['lat'],
             'from_lng'=>$request->from['lng'],
