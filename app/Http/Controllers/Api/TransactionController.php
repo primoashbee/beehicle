@@ -30,5 +30,11 @@ class TransactionController extends Controller
                 'data' => $validator->errors()
             ], 422);  
         }
+
+        return response()->json()[
+            'message' => 'Success',
+            'code' => 200,
+            'data'=> []
+        ];
     }
 }
