@@ -31,10 +31,10 @@ class TransactionController extends Controller
             ], 422);  
         }
 
-        return response()->json()[
+        return response()->json([
             'message' => 'Success',
             'code' => 200,
             'data'=> []
-        ];
+        ]);
     }
 }
