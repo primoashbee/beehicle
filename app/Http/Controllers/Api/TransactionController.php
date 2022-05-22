@@ -50,7 +50,7 @@ class TransactionController extends Controller
         return response()->json([
             'message' => 'Success',
             'code' => 200,
-            'data'=> [$transaction]
+            'data'=> $transaction
         ]);
     }
 }
