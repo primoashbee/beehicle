@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Middleware\IsAdmin;
 use App\Models\User;
 use Illuminate\Auth\Events\Verified;
 use GuzzleHttp\Psr7\Request;
@@ -39,7 +40,7 @@ Route::get('/email/verify/{id}/{hash}', function ($id, $hash) {
     return redirect('/dashboard');
 })->name('verification.verify');
 
-Route::middleware(['auth','verified'])->group(function(){
+Route::middleware(['auth',IsAdmin::class])->group(function(){
     Route::get('/user', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
     Route::get('/dashboard', [App\Http\Controllers\AdminController::class, 'index'])->name('dashboard');
     
