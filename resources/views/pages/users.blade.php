@@ -27,8 +27,9 @@
               <td>
                 {{$user->vehicles()->count()}}
               </td>
-              <td><span class="badge @if($user->verified) bg-label-success @else bg-label-warning @endif  me-1">{{ $user->verified_status}}</span></td>
               <td><span class="badge bg-label-primary me-1">{{ $user->created_at->diffForHumans()}}</span></td>
+              <td><span class="badge @if($user->verified) bg-label-success @else bg-label-warning @endif  me-1">{{ $user->verified_status}}</span></td>
+
               <td>
                 <div class="dropdown">
                   <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
