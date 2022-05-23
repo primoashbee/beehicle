@@ -6,6 +6,7 @@ use App\Http\Controllers\Api\UserController;
 use App\Http\Controllers\Api\VehicleController;
 use App\Http\Controllers\Api\VehicleServiceController;
 use App\Http\Controllers\Api\TransactionController;
+use App\Http\Middleware\Api\EmailMustBeVerified;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -34,7 +35,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::post('/user/register', [UserController::class, 'store']);
 Route::post('/user/login', [UserController::class, 'login']);
 
-Route::middleware('auth:sanctum')->group(function(){
+Route::middleware(['auth:sanctum',EmailMustBeVerified::class])->group(function(){
 
     Route::prefix('/vehicles')->group(function(){
         Route::get('/', [VehicleController::class, 'index']);
@@ -78,7 +79,5 @@ Route::middleware('auth:sanctum')->group(function(){
     });
 
     Route::get('/setup', [UserController::class,'setup']);
-    
-
-    
+        
 });

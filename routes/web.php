@@ -1,6 +1,8 @@
 <?php
 
-use App\Models\Vehicle;
+use App\Models\User;
+use Illuminate\Auth\Events\Verified;
+use GuzzleHttp\Psr7\Request;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 
@@ -23,14 +25,20 @@ Route::get('/', function () {
 
 Auth::routes();
 Route::get('/notice', function(){
-    return view('auth.verify-email');
+    // return view('auth.verify-email');
+    // return view('auth.verify');
+    session()->flash('status',['code'=>400, 'message'=>"Email not yet verified. Please check your email and verifiy this account"]);
+    auth()->user()->sendEmailVerificationNotification();
+    auth()->logout();
+    return redirect()->back();
 })->middleware('auth')->name('verification.notice');
 
-Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
-    $request->fulfill();
- 
-    return redirect('/home');
-})->middleware(['auth', 'signed'])->name('verification.verify');
+Route::get('/email/verify/{id}/{hash}', function ($id, $hash) {
+    $user = User::find($id)->markEmailAsVerified();
+    event(new Verified($user));
+    return redirect('/dashboard');
+})->name('verification.verify');
+
 Route::middleware(['auth','verified'])->group(function(){
     Route::get('/user', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
     Route::get('/dashboard', [App\Http\Controllers\AdminController::class, 'index'])->name('dashboard');

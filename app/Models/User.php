@@ -64,4 +64,9 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->type == self::ADMIN ? true : false;
     }
 
+    public function getVerifiedAttribute()
+    {
+        return is_null($this->email_verified_at) ? false : true;
+    }
+
 }
