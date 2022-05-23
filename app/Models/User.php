@@ -36,6 +36,8 @@ class User extends Authenticatable implements MustVerifyEmail
         'password',
         'remember_token',
     ];
+    
+    protected $appends = ['age'];
     /**
      * The attributes that should be cast.
      *
@@ -43,6 +45,7 @@ class User extends Authenticatable implements MustVerifyEmail
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
+        'birthday'=>'date'
     ];
 
     public function vehicles()
@@ -72,6 +75,11 @@ class User extends Authenticatable implements MustVerifyEmail
     public function getVerifiedStatusAttribute()
     {
         return $this->verified == 'Verified' ? 'Verified' : 'Pending';
+    }
+
+    public function getAgeAttribute()
+    {
+        return $this->birthday->age;
     }
 
 }
