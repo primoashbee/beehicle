@@ -2,6 +2,7 @@
 
 use App\Models\Vehicle;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Foundation\Auth\EmailVerificationRequest;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,9 +22,15 @@ Route::get('/', function () {
 });
 
 Auth::routes();
-Route::get('/verify', function(){
-    return 'Not verified Account';
-})->name('verification.notice');
+Route::get('/notice', function(){
+    return view('auth.verify-email');
+})->middleware('auth')->name('verification.notice');
+
+Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
+    $request->fulfill();
+ 
+    return redirect('/home');
+})->middleware(['auth', 'signed'])->name('verification.verify');
 Route::middleware(['auth','verified'])->group(function(){
     Route::get('/user', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
     Route::get('/dashboard', [App\Http\Controllers\AdminController::class, 'index'])->name('dashboard');
