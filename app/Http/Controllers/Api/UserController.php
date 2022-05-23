@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Log;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Password;
 use Illuminate\Support\Facades\Validator;
 
 class UserController extends Controller
@@ -96,7 +97,25 @@ class UserController extends Controller
 
     public function resetPassword(Request $request)
     {
-        
+        $validator = Validator::make($request->all(),
+        [
+            'email'=>'required|email'
+        ]
+        );
+        if($validator->fails()){
+            return response()->json([
+                'code'=>422,
+                'message'=>'Invalid email',
+                'data'=> $validator->errors()
+            ]);
+        }
+        $status = Password::sendResetLink($request->email);
+
+        return response()->json([
+            'code'=>200,
+            'message'=>'Please check email',
+            'data'=> []
+        ],200);
     }
     
 }
