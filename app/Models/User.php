@@ -69,4 +69,9 @@ class User extends Authenticatable implements MustVerifyEmail
         return is_null($this->email_verified_at) ? false : true;
     }
 
+    public function getVerifiedStatusAttribute()
+    {
+        return $this->verified == 'Verified' ? 'Verified' : 'Pending';
+    }
+
 }
