@@ -21,7 +21,10 @@ Route::get('/', function () {
 });
 
 Auth::routes();
-Route::middleware('auth')->group(function(){
+Route::get('/verify', function(){
+    return 'Not verified Account';
+})->name('verification.notice');
+Route::middleware(['auth','verified'])->group(function(){
     Route::get('/user', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
     Route::get('/dashboard', [App\Http\Controllers\AdminController::class, 'index'])->name('dashboard');
     
@@ -31,8 +34,10 @@ Route::middleware('auth')->group(function(){
     Route::get('/transactions', [App\Http\Controllers\AdminController::class, 'transactions'])->name('transactions');
     Route::get('/profile',[App\Http\Controllers\AdminController::class, 'profile'])->name('profile');
     Route::post('/profile',[App\Http\Controllers\AdminController::class, 'updateProfile'])->name('profile.update');
-    Route::get('/logout', function(){
-        auth()->logout();
-        return redirect('/');
-    });
+
+});
+
+Route::get('/logout', function(){
+    auth()->logout();
+    return redirect('/');
 });
