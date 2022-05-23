@@ -25,6 +25,9 @@ Route::get('/', function () {
 });
 
 Auth::routes();
+Route::get('/register', function(){
+    return redirect('/');
+});
 Route::get('/notice', function(){
     // return view('auth.verify-email');
     // return view('auth.verify');
