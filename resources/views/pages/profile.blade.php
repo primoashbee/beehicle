@@ -88,7 +88,7 @@
                     type="password"
                     class="form-control @error('password_confirmation') is-invalid @enderror"
                     name="password_confirmation"
-                    value="{{old('password_confirmation')}}"
+                    value=""
                   />
                   @error('password_confirmation')
                   <div class="invalid-feedback">
