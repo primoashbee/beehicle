@@ -109,7 +109,7 @@ class UserController extends Controller
                 'data'=> $validator->errors()
             ]);
         }
-        $status = Password::sendResetLink($request->email);
+        $status = Password::sendResetLink(['email'=>$request->email]);
 
         return response()->json([
             'code'=>200,
