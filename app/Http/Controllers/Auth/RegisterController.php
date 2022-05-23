@@ -80,7 +80,7 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
         ]);
 
-        $user->sendEmailVerification();
+        $user->sendEmailVerificationNotification();
 
         return $user;
     }
