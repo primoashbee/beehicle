@@ -49,6 +49,7 @@
             @endforeach
           </tbody>
         </table>
+        {{ $users->links }}
       </div>
     </div>
     <!--/ Basic Bootstrap Table -->
