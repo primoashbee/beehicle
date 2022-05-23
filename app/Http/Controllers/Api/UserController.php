@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Illuminate\Validation\Rule;
+use Illuminate\Support\Facades\Log;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -29,10 +30,11 @@ class UserController extends Controller
                     'password' => ['required', 'string', 'min:8', 'confirmed'],
                 ]
         );
-
+        
         if($validator->fails()){
+            $message = 'Invalid Values';
             return response()->json([
-                'message' => 'Invalid Values',
+                'message' => $message,
                 'code'=>422,
                 'data' => $validator->errors()
             ], 422);            
