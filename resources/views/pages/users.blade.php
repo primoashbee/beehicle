@@ -49,7 +49,7 @@
             @endforeach
           </tbody>
         </table>
-        {{ $users->links }}
+        {{ $users->onEachSide(5)->links() }}
       </div>
     </div>
     <!--/ Basic Bootstrap Table -->
