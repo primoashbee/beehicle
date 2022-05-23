@@ -18,6 +18,10 @@ class IsAdmin
     {
         if(!auth()->user()->is_admin){
             auth()->logout();
+            session()->flash('status',[
+                'code'=>400,
+                'message'=>'Invalid Account '
+            ]);
             return redirect()->route('login');
         }
         return $next($request);
