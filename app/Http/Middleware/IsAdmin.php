@@ -20,7 +20,7 @@ class IsAdmin
             auth()->logout();
             session()->flash('status',[
                 'code'=>400,
-                'message'=>'Invalid Account '
+                'message'=>'User is not an administrator'
             ]);
             return redirect()->route('login');
         }
