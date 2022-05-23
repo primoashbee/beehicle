@@ -19,7 +19,7 @@ class AdminController extends Controller
         // $data['vehicle'] = Vehicle::all();
         // return response()->json($data);
         // exit;
-        $total_users = User::count();
+        $total_users = User::where('type',User::APP_USER)->count();
         $total_vehicles = Vehicle::count();
         $total_transactions = Transaction::count();
         $total_services = Service::count();
@@ -29,7 +29,7 @@ class AdminController extends Controller
 
     public function users()
     {
-        $users = User::paginate(10);
+        $users = User::where('type', User::APP_USER)->paginate(10);
         return view('pages.users', compact('users'));
     }
 
