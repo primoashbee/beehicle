@@ -33,6 +33,7 @@ class UserController extends Controller
         
         if($validator->fails()){
             $message = 'Invalid Values';
+
             return response()->json([
                 'message' => $message,
                 'code'=>422,
@@ -91,6 +92,11 @@ class UserController extends Controller
             'message'=>'Successful',
             'data'=> $data
         ],200);
+    }
+
+    public function resetPassword(Request $request)
+    {
+        dd($request->all());
     }
     
 }

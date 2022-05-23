@@ -65,6 +65,10 @@
         </table>
       </div>
     </div>
+    <div class="d-flex justify-content-center">
+
+      {!! $vehicles->links() !!}
+    </div>
     <!--/ Basic Bootstrap Table -->
 
 </div>
