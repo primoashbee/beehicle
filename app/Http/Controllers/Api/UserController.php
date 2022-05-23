@@ -96,7 +96,7 @@ class UserController extends Controller
 
     public function resetPassword(Request $request)
     {
-        dd($request->all());
+        
     }
     
 }

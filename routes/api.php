@@ -34,7 +34,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::post('/user/register', [UserController::class, 'store']);
 Route::post('/user/login', [UserController::class, 'login']);
-Route::post('/reset-password', [UserController::class, 'resetPassword']);
+Route::post('/user/reset-password', [UserController::class, 'resetPassword']);
 
 Route::middleware(['auth:sanctum',EmailMustBeVerified::class])->group(function(){
 
