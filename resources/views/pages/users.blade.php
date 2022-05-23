@@ -49,8 +49,10 @@
             @endforeach
           </tbody>
         </table>
-        {{ $users->onEachSide(5)->links() }}
       </div>
+      {{ $users->links() }}
+
+
     </div>
     <!--/ Basic Bootstrap Table -->
 
