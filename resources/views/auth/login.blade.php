@@ -54,7 +54,7 @@
 					<h5>YOUR BEEHICLE JOURNAL</h5>
 					
 				</div>
-				<div class="right-inductor"><img src="bacck.jpg" alt="dfadsc"></div>
+				<!-- <div class="right-inductor"><img src="bacck.jpg" alt="dfadsc"></div> -->
 			</div>
 		</div>
 	</section>
