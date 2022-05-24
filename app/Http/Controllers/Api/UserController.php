@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Log;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Password;
 use Illuminate\Support\Facades\Validator;
 
 class UserController extends Controller
@@ -33,6 +34,7 @@ class UserController extends Controller
         
         if($validator->fails()){
             $message = 'Invalid Values';
+
             return response()->json([
                 'message' => $message,
                 'code'=>422,
@@ -48,6 +50,7 @@ class UserController extends Controller
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);
+        $user->sendEmailVerificationNotification();
         $token = $user->createToken('auth_token')->plainTextToken;
         return response()->json([
             'message'=>'Successful Registration',
@@ -90,6 +93,29 @@ class UserController extends Controller
         return response()->json([
             'message'=>'Successful',
             'data'=> $data
+        ],200);
+    }
+
+    public function resetPassword(Request $request)
+    {
+        $validator = Validator::make($request->all(),
+        [
+            'email'=>'required|email'
+        ]
+        );
+        if($validator->fails()){
+            return response()->json([
+                'code'=>422,
+                'message'=>'Invalid email',
+                'data'=> $validator->errors()
+            ]);
+        }
+        $status = Password::sendResetLink(['email'=>$request->email]);
+
+        return response()->json([
+            'code'=>200,
+            'message'=>'Please check email',
+            'data'=> []
         ],200);
     }
     
