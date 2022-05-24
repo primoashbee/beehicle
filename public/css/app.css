@@ -291,6 +291,7 @@ img{
   transform: translate(0%, 45%);
 }
 .right-text h2{
+  font-style: "color:black";
   display: block;
   width: 100%;
   text-align: center;
