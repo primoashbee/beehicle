@@ -48,7 +48,7 @@
 					</form>
 				</div>
 			</div>
-			<img src="backk.jpg"> <div class="right"> 
+			 <div class="right" src="backk.jpg"> 
 				<div class="right-text">
 					<h2	>BEEHICLE</h2>
 					<h5>YOUR BEEHICLE JOURNAL</h5>
