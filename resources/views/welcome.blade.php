@@ -12055,9 +12055,9 @@ section#contact form#contactForm :-ms-input-placeholder {
                         <div class="team-member">
                             <img class="mx-auto rounded-circle" src="css/assets/img/team/intal.png" alt="..." />
                             <h4>Joshua Justine Intal</h4>
-                            <p class="text-muted">Lead Developer</p>
+                            <p class="text-muted">Frontend Developer</p>
                             <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Diana Petersen Twitter Profile"><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-dark btn-social mx-2" href="https://www.facebook.com/AaronPaulTrivino" aria-label="Diana Petersen Facebook Profile"><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-dark btn-social mx-2" href="https://www.facebook.com/JoshuaJustineIntal" aria-label="Diana Petersen Facebook Profile"><i class="fab fa-facebook-f"></i></a>
                             <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Diana Petersen LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
                         </div>
                     </div>
@@ -12065,9 +12065,9 @@ section#contact form#contactForm :-ms-input-placeholder {
                         <div class="team-member">
                             <img class="mx-auto rounded-circle" src="css/assets/img/team/jon.jpg" alt="..." />
                             <h4>Jon Neil Flores Vicente</h4>
-                            <p class="text-muted">Lead Developer</p>
+                            <p class="text-muted">Backend Developer</p>
                             <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Diana Petersen Twitter Profile"><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-dark btn-social mx-2" href="https://www.facebook.com/AaronPaulTrivino" aria-label="Diana Petersen Facebook Profile"><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-dark btn-social mx-2" href="https://www.facebook.com/Jon NeilFloresVicente" aria-label="Diana Petersen Facebook Profile"><i class="fab fa-facebook-f"></i></a>
                             <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Diana Petersen LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
                         </div>
                     </div>
@@ -12075,9 +12075,9 @@ section#contact form#contactForm :-ms-input-placeholder {
                         <div class="team-member">
                             <img class="mx-auto rounded-circle" src="css/assets/img/team/joshua.png" alt="..." />
                             <h4>Lorenzo Caranay Dado</h4>
-                            <p class="text-muted">Lead Developer</p>
+                            <p class="text-muted">Backend Developer</p>
                             <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Diana Petersen Twitter Profile"><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-dark btn-social mx-2" href="https://www.facebook.com/AaronPaulTrivino" aria-label="Diana Petersen Facebook Profile"><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-dark btn-social mx-2" href="https://www.facebook.com/LorenzoCaranayDado" aria-label="Diana Petersen Facebook Profile"><i class="fab fa-facebook-f"></i></a>
                             <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Diana Petersen LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
                         </div>
                     </div>
