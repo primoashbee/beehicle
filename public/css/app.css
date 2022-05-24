@@ -280,7 +280,7 @@ img{
 
 
 .right {
-	background: linear-gradient(212.38deg, rgba(242, 57, 127, 0.7) 0%, rgba(175, 70, 189, 0.71) 100%),url(https://static.seattletimes.com/wp-content/uploads/2019/01/web-typing-ergonomics-1020x680.jpg);
+	background: linear-gradient(212.38deg, rgba(242, 57, 127, 0.7) 0%, rgba(175, 70, 189, 0.71) 100%),url(https://unsplash.com/photos/ZxeNyrfRr1Y);
 	color: #fff;
 	position: relative;
 }
@@ -309,7 +309,7 @@ img{
   position: absolute;
   width: 70px;
   height: 7px;
-  background: rgba(59, 54, 37, 0);
+  background: #fff0;
   left: 50%;
   bottom: 70px;
   transform: translate(-50%, 0%);
@@ -2662,7 +2662,7 @@ textarea.form-control-lg {
   line-height: 1.6;
   color: #212529;
   background-color: #f8fafc;
-  background-image: url("");
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
   background-repeat: no-repeat;
   background-position: right 0.75rem center;
   background-size: 16px 12px;
