@@ -50,7 +50,7 @@
 			</div>
 			<div class="right">
 				<div class="right-text">
-					<h2>LONYX</h2>
+					<h2>BEEHICLE</h2>
 					<h5>A UX BASED CREATIVE AGENCEY</h5>
 					
 				</div>
