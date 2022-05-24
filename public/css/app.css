@@ -294,7 +294,8 @@ img{
   color: black;
   display: block;
   width: 100%;
-  text-align: justify;
+  vertical-align:top;
+  text-align: center;
   font-size: 50px;
   font-weight: 500;
 }
