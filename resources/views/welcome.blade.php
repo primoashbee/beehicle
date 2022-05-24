@@ -12053,7 +12053,7 @@ section#contact form#contactForm :-ms-input-placeholder {
                     </div>
                     <div class="col-lg-4">
                         <div class="team-member">
-                            <img class="mx-auto rounded-circle" src="css/assets/img/jon.jpg" alt="..." />
+                            <img class="mx-auto rounded-circle" src="css/assets/img/team/jon.jpg" alt="..." />
                             <h4>intal</h4>
                             <p class="text-muted">Lead Developer</p>
                             <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Diana Petersen Twitter Profile"><i class="fab fa-twitter"></i></a>
