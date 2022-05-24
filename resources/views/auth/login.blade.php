@@ -54,7 +54,7 @@
 					<h5>A UX BASED CREATIVE AGENCEY</h5>
 					
 				</div>
-				<div class="right-inductor"><img src="bacck.jpg" alt=""></div>
+				<div class="right-inductor"><img src="bacck.jpg" alt="dfadsc"></div>
 			</div>
 		</div>
 	</section>
