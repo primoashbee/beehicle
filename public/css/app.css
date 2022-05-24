@@ -309,7 +309,7 @@ img{
   position: absolute;
   width: 70px;
   height: 7px;
-  background: #fff0;
+  background: rgba(253, 215, 65, 0);
   left: 50%;
   bottom: 70px;
   transform: translate(-50%, 0%);
