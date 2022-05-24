@@ -50,8 +50,8 @@
 			</div>
 			<div class="right">
 				<div class="right-text">
-					<h2>BEEHICLE</h2>
-					<h5>A UX BASED CREATIVE AGENCEY</h5>
+					<h2	>BEEHICLE</h2>
+					<h5>YOUR BEEHICLE JOURNAL</h5>
 					
 				</div>
 				<div class="right-inductor"><img src="bacck.jpg" alt="dfadsc"></div>
