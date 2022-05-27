@@ -42,6 +42,25 @@ return [
             'visibility' => 'public',
         ],
 
+        'images'=>[
+            'driver' => 'local',
+            'root' => storage_path('app/public/vehicle/images'),
+            'url' => env('APP_URL').'/storage/vehicle/images',
+            'visibility' => 'public',
+        ],
+        'orcr'=>[
+            'driver' => 'local',
+            'root' => storage_path('app/public/vehicle/orcr'),
+            'url' => env('APP_URL').'/storage/vehicle/orcr',
+            'visibility' => 'public',
+        ],
+        'mortgages'=>[
+            'driver' => 'local',
+            'root' => storage_path('app/public/vehicle/mortgages'),
+            'url' => env('APP_URL').'/storage/vehicle/images',
+            'visibility' => 'public',
+        ],
+
         's3' => [
             'driver' => 's3',
             'key' => env('AWS_ACCESS_KEY_ID'),

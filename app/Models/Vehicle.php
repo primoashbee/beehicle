@@ -34,4 +34,14 @@ class Vehicle extends Model
     {
       return $this->hasMany(ServiceSummary::class);
     }
+
+    public function travels()
+    {
+        return $this->hasMany(TravelRecord::class);
+    }
+
+    public function images()
+    {
+        return $this->hasMany(Image::class);
+    }
 }
