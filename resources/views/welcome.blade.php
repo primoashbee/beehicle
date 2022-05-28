@@ -11938,10 +11938,10 @@ section#contact form#contactForm :-ms-input-placeholder {
                                 <div class="portfolio-hover">
                                     <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                                 </div>
-                                <img class="img-fluid" src="css/assets/img/portfolio/services.png" alt="..." />
+                                <img class="img-fluid" src="css/assets/img/portfolio/other_services.png" alt="..." />
                             </a>
                             <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Add Services Page</div>
+                                <div class="portfolio-caption-heading">Other Services Page</div>
                                 <div class="portfolio-caption-subheading text-muted"></div>
                             </div>
                         </div>
@@ -11968,10 +11968,10 @@ section#contact form#contactForm :-ms-input-placeholder {
                                 <div class="portfolio-hover">
                                     <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                                 </div>
-                                <img class="img-fluid" src="css/assets/img/portfolio/transaction1.png" alt="..." />
+                                <img class="img-fluid" src="css/assets/img/portfolio/travel_record.png" alt="..." />
                             </a>
                             <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Transaction Page</div>
+                                <div class="portfolio-caption-heading">Travel Record Page</div>
                                 <div class="portfolio-caption-subheading text-muted"></div>
                             </div>
                         </div>
