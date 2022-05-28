@@ -11873,7 +11873,7 @@ section#contact form#contactForm :-ms-input-placeholder {
                             <i class="fas fa-desktop fa-stack-1x fa-inverse"></i>
                         </span>
                         <h4 class="my-3">Monitor PMS</h4>
-                        <p class="text-muted">It can monitor/predict the maintenance of the vehicle. It will help track how much the vehicle will cost per travel, it can also help to compute the fuel consumption from point to point and notify when to PMS</p>
+                        <p class="text-muted">It helps to know and recall the records you traveled, also provide the list for every kilometer reading that needs to PMS.</p>
                     </div>
                 </div>
             </div>
@@ -12279,7 +12279,7 @@ section#contact form#contactForm :-ms-input-placeholder {
                                     <h2 class="text-uppercase">The Services Page</h2>
                                     <p class="item-intro text-muted"></p>
                                     <img class="img-fluid d-block mx-auto" src="css/assets/img/portfolio/other_services.png" alt="..." />
-                                    <p>other services such as owners name, service type,date of service and service provider</p>
+                                    <p>Other services such as repair record, you can record to keep track of a car’s issues and repairs.</p>
                                     <ul class="list-inline">
                                     </ul>
                                     <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
@@ -12334,7 +12334,7 @@ section#contact form#contactForm :-ms-input-placeholder {
                                     <h2 class="text-uppercase">Travel Record Page</h2>
                                     <p class="item-intro text-muted"></p>
                                     <img class="img-fluid d-block mx-auto" src="css/assets/img/portfolio/travel_record.png" alt="..." />
-                                    <p>it helps to know and recall the records you traveled,also provide the list for every kilometer reading that needs to PMS</p>
+                                    <p>Beehicle's Transaction page, It will help track how much the vehicle will cost per travel, it can also help to compute the fuel consumption from point to point</p>
                                     <ul class="list-inline">
                                         
                                     </ul>
