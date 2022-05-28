@@ -11856,7 +11856,7 @@ section#contact form#contactForm :-ms-input-placeholder {
                             <i class="fas fa-circle fa-stack-2x text-primary"></i>
                             <i class="fas fa-cog fa-stack-1x fa-inverse"></i>
                         </span>
-                        <h4 class="my-3">Add Services</h4>
+                        <h4 class="my-3">Other Services</h4>
                         <p class="text-muted">You can also add services such as oil management you can record when you last changed the oil of your vehicle and you can also record when you change the oil again</p>
                     </div>
                     <div class="col-md-4">
@@ -12278,8 +12278,8 @@ section#contact form#contactForm :-ms-input-placeholder {
                                     <!-- Project details-->
                                     <h2 class="text-uppercase">The Services Page</h2>
                                     <p class="item-intro text-muted"></p>
-                                    <img class="img-fluid d-block mx-auto" src="css/assets/img/portfolio/services.png" alt="..." />
-                                    <p>Beehicle's Add services and Services Info, Where owners can also add services such as oil management. You can record when you last changed the oil of your vehicle and you can also record when you change oil again</p>
+                                    <img class="img-fluid d-block mx-auto" src="css/assets/img/portfolio/other_services.png" alt="..." />
+                                    <p>other services such as owners name, service type,date of service and service provider</p>
                                     <ul class="list-inline">
                                     </ul>
                                     <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
