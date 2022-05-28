@@ -1,14 +1,17 @@
 <?php
 
-use App\Http\Controllers\Api\ProviderController;
-use App\Http\Controllers\Api\ServiceController;
-use App\Http\Controllers\Api\UserController;
-use App\Http\Controllers\Api\VehicleController;
-use App\Http\Controllers\Api\VehicleServiceController;
-use App\Http\Controllers\Api\TransactionController;
-use App\Http\Middleware\Api\EmailMustBeVerified;
 use Illuminate\Http\Request;
+use Illuminate\Contracts\Cache\Store;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Storage;
+use App\Http\Controllers\Api\UserController;
+use App\Http\Controllers\Api\ServiceController;
+use App\Http\Controllers\Api\VehicleController;
+use App\Http\Controllers\Api\ProviderController;
+use App\Http\Middleware\Api\EmailMustBeVerified;
+use App\Http\Controllers\Api\TransactionController;
+use App\Http\Controllers\Api\TravelRecordController;
+use App\Http\Controllers\Api\VehicleServiceController;
 
 /*
 |--------------------------------------------------------------------------
@@ -80,5 +83,12 @@ Route::middleware(['auth:sanctum',EmailMustBeVerified::class])->group(function()
     });
 
     Route::get('/setup', [UserController::class,'setup']);
-        
+    Route::post('/travels', [TravelRecordController::class, 'store']); 
+    Route::delete('/travels/{transaction_id}', [TravelRecordController::class, 'delete']); 
+
+    Route::put('/profile/{user_id}', [UserController::class, 'update']);
+});
+
+Route::post('/photo', function(Request $request){
+    $url = Storage::disk('mortgages')->putFileAs('', $request->file('file'),'ashbee.jpeg');
 });

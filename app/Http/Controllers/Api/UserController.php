@@ -88,12 +88,20 @@ class UserController extends Controller
     public function setup()
     {
         $user_id = auth('sanctum')->user()->id;
-        $data = User::with(['vehicles.transactions','vehicles.services','vehicles.serviceSummary.services'])->find($user_id);
+        $data = User::with(['vehicles.transactions','vehicles.services','vehicles.serviceSummary.services','vehicles.travels'])->find($user_id);
         
         return response()->json([
             'message'=>'Successful',
             'data'=> $data
         ],200);
+    }
+
+    public static function refreshData()
+    {
+        $user_id = auth('sanctum')->user()->id;
+        // return User::find($user_id);
+        $data = User::with(['vehicles.transactions','vehicles.services','vehicles.serviceSummary.services','vehicles.travels'])->find($user_id);
+        return $data;
     }
 
     public function resetPassword(Request $request)
@@ -116,6 +124,46 @@ class UserController extends Controller
             'code'=>200,
             'message'=>'Please check email',
             'data'=> []
+        ],200);
+    }
+
+    public function update(Request $request, $user_id)
+    {
+        $user = User::find($user_id);
+        $validator = Validator::make(
+            $request->all(),
+                [
+                    'name' => ['required', 'string', 'max:255'],
+                    // 'gender' => ['required', Rule::in(['Male', 'Female'])],
+                    'birthday' => ['required', 'date'],
+                    'phone_number' => ['required', 'unique:users,phone_number, ' . $user->id],
+                    'address' => ['required'],
+                    'email' => ['required', 'string', 'email', 'unique:users,email, ' . $user->id],
+                ]
+        );
+        
+        if($validator->fails()){
+            $message = 'Invalid Values';
+
+            return response()->json([
+                'message' => $message,
+                'code'=>422,
+                'data' => $validator->errors()
+            ], 422);            
+        }
+
+        $user->update([
+            'name'=>$request->name,
+            'birthday'=> Carbon::parse($request->birthday),
+            'phone_number'=>$request->phone_number,
+            'address'=>$request->address,
+            'email'=>$request->email
+        ]);
+
+        return response()->json([
+            'message'=>'Profile Updated',
+            'code'=>200,
+            'data'=> UserController::refreshData()
         ],200);
     }
     
