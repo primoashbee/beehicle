@@ -12043,7 +12043,7 @@ section#contact form#contactForm :-ms-input-placeholder {
                     </div>
                     <div class="col-lg-4">
                         <div class="team-member">
-                            <img class="mx-auto rounded-circle" src="css/assets/img/team/5.PNG" alt="..." />
+                            <img class="mx-auto rounded-circle" src="css/assets/img/team/5 (2).png" alt="..." />
                             <h4>Aaron Paul Triviño</h4>
                             <p class="text-muted">Lead Developer</p>
                             <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Diana Petersen Twitter Profile"><i class="fab fa-twitter"></i></a>
@@ -12063,7 +12063,7 @@ section#contact form#contactForm :-ms-input-placeholder {
                     </div>
                     <div class="col-lg-4">
                         <div class="team-member">
-                            <img class="mx-auto rounded-circle" src="css/assets/img/team/jon.jpg" alt="..." />
+                            <img class="mx-auto rounded-circle" src="css/assets/img/team/jon.png" alt="..." />
                             <h4>Jon Neil Flores Vicente</h4>
                             <p class="text-muted">Backend Developer</p>
                             <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Diana Petersen Twitter Profile"><i class="fab fa-twitter"></i></a>
