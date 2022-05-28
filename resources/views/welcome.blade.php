@@ -12334,7 +12334,7 @@ section#contact form#contactForm :-ms-input-placeholder {
                                     <h2 class="text-uppercase">Travel Record Page</h2>
                                     <p class="item-intro text-muted"></p>
                                     <img class="img-fluid d-block mx-auto" src="css/assets/img/portfolio/travel_record.png" alt="..." />
-                                    <p>Beehicle's Transaction page, It will help track how much the vehicle will cost per travel, it can also help to compute the fuel consumption from point to point</p>
+                                    <p>It helps to know and recall the records you traveled, also provide the list for every kilometer reading that needs to PMS.</p>
                                     <ul class="list-inline">
                                         
                                     </ul>
