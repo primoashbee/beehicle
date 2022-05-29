@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\PMSController;
 use Illuminate\Http\Request;
 use Illuminate\Contracts\Cache\Store;
 use Illuminate\Support\Facades\Route;
@@ -82,6 +83,10 @@ Route::middleware(['auth:sanctum',EmailMustBeVerified::class])->group(function()
         Route::get('/', [ProviderController::class, 'index']);
     });
 
+    // Route::prefix('/pms', function(){
+    //     Route::get('/', [PMSController::class,'store']);
+    // });
+    Route::post('/pms', [PMSController::class,'store']);
     Route::get('/setup', [UserController::class,'setup']);
     Route::post('/travels', [TravelRecordController::class, 'store']); 
     Route::delete('/travels/{transaction_id}', [TravelRecordController::class, 'delete']); 

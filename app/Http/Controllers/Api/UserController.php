@@ -88,7 +88,7 @@ class UserController extends Controller
     public function setup()
     {
         $user_id = auth('sanctum')->user()->id;
-        $data = User::with(['vehicles.transactions','vehicles.services','vehicles.serviceSummary.services','vehicles.travels'])->find($user_id);
+        $data = User::with(['vehicles.transactions','vehicles.services','vehicles.serviceSummary.services','vehicles.travels','vehicles.pms'])->find($user_id);
         
         return response()->json([
             'message'=>'Successful',
@@ -100,7 +100,7 @@ class UserController extends Controller
     {
         $user_id = auth('sanctum')->user()->id;
         // return User::find($user_id);
-        $data = User::with(['vehicles.transactions','vehicles.services','vehicles.serviceSummary.services','vehicles.travels'])->find($user_id);
+        $data = User::with(['vehicles.transactions','vehicles.services','vehicles.serviceSummary.services','vehicles.travels','vehicles.pms'])->find($user_id);
         return $data;
     }
 
@@ -130,6 +130,7 @@ class UserController extends Controller
     public function update(Request $request, $user_id)
     {
         $user = User::find($user_id);
+        
         $validator = Validator::make(
             $request->all(),
                 [

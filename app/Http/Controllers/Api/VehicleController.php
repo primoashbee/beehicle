@@ -33,6 +33,8 @@ class VehicleController extends Controller
                 'date_purchased'=>'required|date',
                 'chasis'=>'required',
                 'coding'=>'required',
+                'vehicle_image_car'=>'required',
+                'vehicle_image_orcr'=>'required'
             ]
         );
 
@@ -43,7 +45,14 @@ class VehicleController extends Controller
                 'data' => $validator->errors()
             ], 422);
         }
+
+        return response()->json([
+            'message'=>'nice',
+            'data'=>[],
+            'code'=>200
+        ],200);
         $user = auth('sanctum')->user();
+
         $vehicle = $user->vehicles()->create([
             'brand'=>$request->brand,
             'plate_number'=>$request->plate_number,

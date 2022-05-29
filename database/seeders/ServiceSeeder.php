@@ -14,15 +14,22 @@ class ServiceSeeder extends Seeder
      */
     public function run()
     {
-        $services = [
-            'Oil Filter',
+        // $services = [
+        //     'Oil Filter',
+        //     'Air',
+        //     'Gas',
+        //     'Battery',
+        //     'Engine',
+        //     'Water',
+        //     'Oil',
+        //     'Belts'
+        // ];
+        $services  = [
             'Air',
-            'Gas',
-            'Battery',
-            'Engine',
-            'Water',
-            'Oil',
-            'Belts'
+            'Tire Replacement',
+            'Scratch',
+            'Seat Cover',
+            'Light'
         ];
         $data = [];
         $now = now();
