@@ -11820,9 +11820,9 @@ section#contact form#contactForm :-ms-input-placeholder {
                           <a href="{{ route('dashboard') }}" class="nav-link">Dashboard</a>
                         </li>
                     @else
-                      <li class="nav-item">
+                      <!-- <li class="nav-item">
                         <a href="{{ route('login') }}" class="nav-link">Log in</a>
-                      </li>
+                      </li> -->
 
                         {{-- @if (Route::has('register'))
                             <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
