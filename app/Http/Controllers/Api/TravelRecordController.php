@@ -45,7 +45,7 @@ class TravelRecordController extends Controller
         $status = $vehicle->fresh()->status;
         $message = 'Success';
         if($status['for_pms']){
-            $message = 'Record Added. Please add PMS record for ' . $status['pms_kms']. ' kms'
+            $message = 'Record Added. Please add PMS record for ' . $status['pms_kms']. ' kms';
         }
         return response()->json([
             'message' => $message,
