@@ -92,7 +92,7 @@ class Vehicle extends Model
         if($qry->count() > 0){
             return [
                 'for_pms'=>false,
-                'pms_kms'=> $qry->first()->pms_kms
+                'pms_kms'=> $qry->first()['pms_kms']
             ];
         }else{
             return [
