@@ -59,24 +59,25 @@ class Vehicle extends Model
         $second = PMS::where('vehicle_id', $this->id)->where('pms_kms', 5000)->first();
         $third = PMS::where('vehicle_id', $this->id)->where('pms_kms', 10000)->first();
 
+        $has_travel_record    =  is_null($this->travels()->orderBy('id','desc')->first()) ? false : true;
         return [
             [ 
                 'pms_kms'=>'1000',
                 'data'=> $first,
-                'alert'=> $this->travels()->orderBy('id','desc')->first()->odometer_end >= 1000 ? true : false,
+                'alert'=> ($has_travel_record && $this->travels()->orderBy('id','desc')->first()->odometer_end >= 1000) ? true : false,
                 'done'=> !is_null($first) ? true : false
             ],
             [ 
                 'pms_kms'=>'5000',
                 'data'=> $second,
-                'alert'=> $this->travels()->orderBy('id','desc')->first()->odometer_end >= 5000   ? true : false,
+                'alert'=> ($has_travel_record && $this->travels()->orderBy('id','desc')->first()->odometer_end >= 5000)   ? true : false,
                 'done'=> !is_null($second) ? true : false
 
             ],
             [ 
                 'pms_kms'=>'10000',
                 'data'=> $third,
-                'alert'=> $this->travels()->orderBy('id','desc')->first()->odometer_end >= 10000  ? true : false,
+                'alert'=> ($has_travel_record && $this->travels()->orderBy('id','desc')->first()->odometer_end >= 10000)  ? true : false,
                 'done'=> !is_null($third) ? true : false
 
             ],
