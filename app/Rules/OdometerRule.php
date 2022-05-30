@@ -42,8 +42,8 @@ class OdometerRule implements Rule
         if($this->type=='start'){
             if($qry->count() > 0 ){
                 $latest_odometer = $vehicle->last_odometer;
-                $this->message = 'Start odometer must be greater than or equal ' . $latest_odometer;
-                return $latest_odometer <= $value;
+                $this->message = 'Start odometer must be equal to ' . $latest_odometer;
+                return $latest_odometer == $value;
             }
             return true;
         }
