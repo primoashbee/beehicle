@@ -22,7 +22,7 @@ class TravelRecordController extends Controller
                 'address_end'=>'required',
                 
                 'odometer_start'=>['required','gte:0', new OdometerRule($request->vehicle_id, 'start')],
-                'odometer_end'=>'required',
+                'odometer_end'=>'required|gte:odometer_start',
                 'datetime'=>'required|date|before:tomorrow',
                 'notes'=>'nullable',
             ]
