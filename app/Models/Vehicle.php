@@ -97,7 +97,7 @@ class Vehicle extends Model
         }else{
             return [
                 'for_pms'=>false,
-                'pms_kms'=> $qry->first()->pms_kms
+                'pms_kms'=> 0
             ];
         }
     }
