@@ -91,7 +91,7 @@ class Vehicle extends Model
         $qry = $records->where('alert', true)->where('done',false);
         if($qry->count() > 0){
             return [
-                'for_pms'=>false,
+                'for_pms'=>true,
                 'pms_kms'=> $qry->first()['pms_kms']
             ];
         }else{
