@@ -6,6 +6,7 @@ use App\Models\PMS;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Illuminate\Validation\Rule;
+use Illuminate\Support\Facades\Log;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 
@@ -84,6 +85,20 @@ class PMSController extends Controller
         return response([
             'code'=>200,
             'message'=>'PMS Created',
+            'data'=>UserController::refreshData()
+        ],200);
+    }
+
+    public function update(Request $request, $vehicle_id, $pms_kms)
+    {
+        $pms = PMS::where('vehicle_id', $vehicle_id)->where('pms_kms', $pms_kms)->first();
+        Log::info($request->all());
+        $pms->update([
+            'data'=>json_encode($request->all())
+        ]);
+        return response()->json([
+            'code'=>200,
+            'message'=>'PMS Updated',
             'data'=>UserController::refreshData()
         ],200);
     }

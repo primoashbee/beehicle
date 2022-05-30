@@ -87,6 +87,7 @@ Route::middleware(['auth:sanctum',EmailMustBeVerified::class])->group(function()
     //     Route::get('/', [PMSController::class,'store']);
     // });
     Route::post('/pms', [PMSController::class,'store']);
+    Route::put('/pms/{vehicle_id}/{pms_kms}', [PMSController::class,'update']);
     Route::get('/setup', [UserController::class,'setup']);
     Route::post('/travels', [TravelRecordController::class, 'store']); 
     Route::delete('/travels/{transaction_id}', [TravelRecordController::class, 'delete']); 
