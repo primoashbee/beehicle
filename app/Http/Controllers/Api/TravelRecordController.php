@@ -44,7 +44,6 @@ class TravelRecordController extends Controller
         $travel = $vehicle->travels()->create($request->except('vehicle_id'));
         $status = $vehicle->fresh()->status;
         $message = 'Success';
-        var_dump($status);
         if($status['for_pms']){
             $message = 'Record Added. Please add PMS record for ' . $status['pms_kms']. ' kms';
         }
