@@ -74,7 +74,7 @@ class TravelRecordController extends Controller
         }
         $record->delete();
         return response()->json([
-            'message' => 'Travel Record Deleted',
+            'message' => 'Travel Record Deleteddddd',
             'code' => 200,
             'data'=> UserController::refreshData()
         ]);
