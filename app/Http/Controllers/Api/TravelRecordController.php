@@ -57,15 +57,21 @@ class TravelRecordController extends Controller
     public function delete($trasaction_id){
         
 
-       $record = TravelRecord::find($trasaction_id);
-       if($record->vehicle->user_id != auth('sanctum')->user()->id){
+        $record = TravelRecord::find($trasaction_id);
+        if($record->vehicle->user_id != auth('sanctum')->user()->id){
             return response()->json([
                 'message' => 'Authentication failed',
                 'code'=>422,
                 'data' => []
             ], 422); 
-       }
-
+        }
+        if(!$record->is_latest){
+            return response()->json([
+                'message' => 'Delete latest travel record first',
+                'code' => 422,
+                'data'=> []
+            ]);
+        }
         $record->delete();
         return response()->json([
             'message' => 'Travel Record Deleted',

@@ -21,4 +21,10 @@ class TravelRecord extends Model
     {
         return $this->belongsTo(Vehicle::class);
     }
+
+    public function getIsLatestAttribute()
+    {
+        $vehicle_id = $this->vehicle_id;
+        return TravelRecord::where('vehicle_id', $vehicle_id)->orderBy('id','desc')->first()->id == $this->id;
+    }
 }
