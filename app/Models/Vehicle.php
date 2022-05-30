@@ -18,7 +18,7 @@ class Vehicle extends Model
         'date_purchased'
     ];
 
-    protected $appends = ['pms_records'];
+    protected $appends = ['pms_records','last_odometer'];
     public function user()
     {
         return $this->belongsTo(User::class);
@@ -55,6 +55,7 @@ class Vehicle extends Model
 
     public function getPMSRecordsAttribute()
     {
+        
         $first = PMS::where('vehicle_id', $this->id)->where('pms_kms', 1000)->first();
         $second = PMS::where('vehicle_id', $this->id)->where('pms_kms', 5000)->first();
         $third = PMS::where('vehicle_id', $this->id)->where('pms_kms', 10000)->first();
@@ -82,5 +83,31 @@ class Vehicle extends Model
 
             ],
         ];
+    }
+
+    public function status()
+    {
+        $records = collect($this->pms_records);
+        $qry = $records->where('alert', true)->where('done',false);
+        if($qry->count() > 0){
+            return [
+                'for_pms'=>false,
+                'pms_kms'=> $qry->first()->pms_kms
+            ];
+        }else{
+            return [
+                'for_pms'=>false,
+                'pms_kms'=> $qry->first()->pms_kms
+            ];
+        }
+    }
+
+    public function getLastOdometerAttribute()
+    {
+        $qry = $this->travels();
+        if($qry->count() > 0){
+            return (int) ($this->travels()->orderBy('id','desc')->first()->odometer_end);
+        }
+        return 0;
     }
 }

@@ -41,7 +41,7 @@ class TravelRecordController extends Controller
             'datetime' => Carbon::parse($request->datetime)
         ]);
         $travel = $vehicle->travels()->create($request->except('vehicle_id'));
-
+        
         return response()->json([
             'message' => 'Success',
             'code' => 200,
