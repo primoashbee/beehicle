@@ -3,11 +3,12 @@
 namespace App\Http\Controllers\Api;
 
 use App\Models\Vehicle;
+use App\Rules\OdometerRule;
 use App\Models\TravelRecord;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\Log;
 use App\Http\Controllers\Controller;
-use App\Rules\OdometerRule;
 use Illuminate\Support\Facades\Validator;
 
 class TravelRecordController extends Controller
