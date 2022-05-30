@@ -42,11 +42,13 @@ class TravelRecordController extends Controller
             'datetime' => Carbon::parse($request->datetime)
         ]);
         $travel = $vehicle->travels()->create($request->except('vehicle_id'));
-        if($vehicle->pms_records){
-
+        $status = $vehicle->fresh()->status;
+        $message = 'Success';
+        if($status['for_pms']){
+            $message = 'Record Added. Please add PMS record for ' . $status['pms_kms']. ' kms'
         }
         return response()->json([
-            'message' => 'Success',
+            'message' => $message,
             'code' => 200,
             'data'=> UserController::refreshData()
         ]);

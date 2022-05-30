@@ -85,7 +85,7 @@ class Vehicle extends Model
         ];
     }
 
-    public function status()
+    public function getStatusAttribute()
     {
         $records = collect($this->pms_records);
         $qry = $records->where('alert', true)->where('done',false);
