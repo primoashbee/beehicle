@@ -7,6 +7,7 @@ use App\Models\TravelRecord;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use App\Http\Controllers\Controller;
+use App\Rules\OdometerRule;
 use Illuminate\Support\Facades\Validator;
 
 class TravelRecordController extends Controller
@@ -20,7 +21,7 @@ class TravelRecordController extends Controller
                 'address_start'=>'required',
                 'address_end'=>'required',
                 
-                'odometer_start'=>'required',
+                'odometer_start'=>['required','gte:0', new OdometerRule($request->vehicle_id, 'start')],
                 'odometer_end'=>'required',
                 'datetime'=>'required|date|before:tomorrow',
                 'notes'=>'nullable',
@@ -41,7 +42,9 @@ class TravelRecordController extends Controller
             'datetime' => Carbon::parse($request->datetime)
         ]);
         $travel = $vehicle->travels()->create($request->except('vehicle_id'));
-        
+        if($vehicle->pms_records){
+
+        }
         return response()->json([
             'message' => 'Success',
             'code' => 200,
