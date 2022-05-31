@@ -64,9 +64,7 @@ class VehicleController extends Controller
 
         return response()->json([
             'message' => 'Successful Vehicle Registration',
-            'data' => [
-                'vehicle'=> $vehicle->load('services','transactions')
-            ],
+            'data' => UserController::refreshData(),
             'code' => 200
         ], 200);
     }
