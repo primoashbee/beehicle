@@ -46,11 +46,7 @@ class VehicleController extends Controller
             ], 422);
         }
 
-        return response()->json([
-            'message'=>'nice',
-            'data'=>[],
-            'code'=>200
-        ],200);
+    
         $user = auth('sanctum')->user();
 
         $vehicle = $user->vehicles()->create([
