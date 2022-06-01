@@ -32,9 +32,9 @@ class VehicleController extends Controller
                 'vehicle_type'=>'required',
                 'date_purchased'=>'required|date',
                 'chasis'=>'required',
-                'coding'=>'required'
-                // 'vehicle_image_car'=>'required',
-                // 'vehicle_image_orcr'=>'required'
+                'coding'=>'required',
+                'vehicle_image_car'=>'required',
+                'vehicle_image_orcr'=>'required'
             ]
         );
 
