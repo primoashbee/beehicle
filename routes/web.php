@@ -40,12 +40,11 @@ Route::get('/notice', function(){
 Route::get('/email/verify/{id}/{hash}', function ($id, $hash) {
     $user = User::find($id)->markEmailAsVerified();
     event(new Verified($user));
-    return view('auth.verified');
+    return redirect()->away("https://beehicle.xyz/welcome");
 })->name('verification.verify');
 
 
 Route::get('/wew', function(){
-    return view('auth.verified');
     return redirect()->away("https://beehicle.xyz/welcome");
 });
 
