@@ -56,6 +56,8 @@ class VehicleController extends Controller
             'date_purchased'=>$request->date_purchased,
             'chasis'=>$request->chasis,
             'coding'=>$request->coding,
+            'vehicle_image_car'=>$request->vehicle_image_car,
+            'vehicle_image_orcr'=>$request->vehicle_image_orcr,
         ]);
 
         return response()->json([
