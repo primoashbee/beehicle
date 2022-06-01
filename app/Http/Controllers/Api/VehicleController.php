@@ -107,10 +107,8 @@ class VehicleController extends Controller
         ]);
 
         return response()->json([
-            'message' => 'Vehicle successfully updated',
-            'data' => [
-                'vehicle' => $vehicle->fresh()
-            ],
+            'message' => 'Successful Vehicle Registration',
+            'data' => UserController::refreshData(),
             'code' => 200
         ], 200);
     }
