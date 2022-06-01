@@ -45,6 +45,7 @@ Route::get('/email/verify/{id}/{hash}', function ($id, $hash) {
 
 
 Route::get('/wew', function(){
+    return view('auth.verified');
     return redirect()->away("https://beehicle.xyz/welcome");
 });
 
