@@ -34,7 +34,7 @@ class PMSController extends Controller
                 'filters'=>'required',
                 'washer_fluid'=>'required',
                 'engine_coolant'=>'required',
-                'cost'=>'required',
+                // 'cost'=>'required',
                 'date'=>'required|date',
                 'notes'=>'nullable',
             ];
